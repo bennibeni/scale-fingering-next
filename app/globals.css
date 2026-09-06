@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #f4f0e8;
+  --ink: #1c2520;
+  --moss: #2f5540;
+  --line: #d7d2c8;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  background:
+    radial-gradient(circle at 88% 2%, rgba(198, 222, 205, .74), transparent 31rem),
+    radial-gradient(circle at 3% 88%, rgba(232, 210, 164, .34), transparent 26rem),
+    var(--paper);
+}
+button, select { font: inherit; }
+button:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid rgba(77,118,92,.38); outline-offset: 2px; }
+
+@layer components {
+  .page-title { @apply font-sans text-4xl font-semibold tracking-[-0.04em] text-ink md:text-6xl; }
+  .eyebrow { @apply text-xs font-extrabold uppercase tracking-[0.14em] text-moss-700; }
+  .surface { @apply rounded-2xl border border-stone-300/90 bg-white/70 shadow-panel backdrop-blur-sm; }
+  .control { @apply rounded-xl border border-stone-300 bg-white px-3 py-2.5 text-sm text-stone-800 transition hover:border-moss-500; }
+}
